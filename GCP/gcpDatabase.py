@@ -42,7 +42,6 @@ class LaboratoryOrder(Base):
 
 ### Part 2 - initial sqlalchemy-engine to connect to db:
 
-
 engine = create_engine(GCPURL,
     connect_args={'ssl': {'ssl-mode':'preferred'}},
 )   

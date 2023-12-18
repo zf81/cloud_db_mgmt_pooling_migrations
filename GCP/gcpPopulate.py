@@ -23,7 +23,6 @@ session = Session()
 #create a faker instance 
 fake = Faker()
 
-
 for _ in range(10):
     patient = Patient(
         first_name=fake.first_name(),
@@ -40,7 +39,7 @@ for _ in range(20):
         lab_result=fake.random_element(elements=('Abnormal', 'Normal')),
         lab_id=session.query(Patient).order_by(func.rand()).first().id
     )
-    session.add(labtest)
+    session.add(laborder)
 
 #commit
 session.commit()

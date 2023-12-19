@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, text
 
 load_dotenv()  
 
-GCPURL = os.getenv("GCP")
+GCPURL = os.getenv("GCPURL")
 
 engine = create_engine(GCPURL,
     connect_args={'ssl': {'ssl-mode':'preferred'}},

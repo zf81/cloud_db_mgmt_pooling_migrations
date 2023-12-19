@@ -26,6 +26,7 @@ class Patient(Base):
     last_name = Column(String(50), nullable=False)
     date_of_birth = Column(Date, nullable=False)
     contact_number = Column(String(50), nullable=False)
+    happiness_score = Column(Integer)
     laboratory = relationship('LaboratoryOrder', back_populates='patient')
 
 class LaboratoryOrder(Base):

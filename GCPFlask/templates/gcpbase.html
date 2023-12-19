@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to a Fake Healthcare Database</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">This is a Fake GCP Healthcare Database</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/patients" class="hover:underline">Patients</a></li>
+                <li><a href="/labs" class="hover:underline">Labs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="p-4">
+
+        {% block content %}
+            <p> Warning! You Are Viewing a Fake Healthcare Database.</p>
+            </br>
+            <p>This database contains fake healthcare data</p>
+            </br>
+            <p>You can check out fake data on patients and labs.</p>
+        {% endblock %}
+
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-6">
+        <p>© 2023 Fake Healthcare Database. All Rights Reserved but not really.</p>
+    </footer>
+</body>
+
+</html>

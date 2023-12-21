@@ -17,8 +17,6 @@ load_dotenv()
 
 AZUREURL = os.getenv("AZUREURL")
 
-AZUREURL = "mysql+pymysql://fzfall:Azurefall2023!@fzpooling.mysql.database.azure.com/fizzah"
-
 DB_HOST = os.getenv("DB_HOST")
 DB_DATABASE = os.getenv("DB_DATABASE")
 DB_USERNAME = os.getenv("DB_USERNAME")

@@ -63,48 +63,38 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 
 ## Populate Tables With Sample Fake Data:
 - Create another .py file (gcpPopulate.py) which will be used for populating the tables: [gcpPopulate.py](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP/gcpPopulate.py)
-+ Import necessary packages into gcpPopulate.py file
-+ Load in credentials from .env file and create a database engine
-+ Create a session to interact with the database
-+ Create a faker instance to fill table with fake information
-+ Create functions to generate fake data for the tables in the database
-+ Generate and insert fake data
-+ Commit the session and close it
-+ See [gcpPopulate.py](addlink.py) for a step by step process of the above
-+ To see if tables have been successfully populated, enter the MySQL monitor again following the steps listed under "**To check if the tables have been successfully created:**"
+- Import necessary packages into gcpPopulate.py file
+- Load in credentials from .env file and create a database engine
+- Create a session to interact with the database
+- Create a faker instance. This will be used to populate the tables with fake information
+- Create functions to generate fake data for the tables in the database
+- Insert fake data
+- To make sure that the tables are populated with fake data, execute MySQL once again 
 
 ### Azure: 
 
 **Create Database Schema:**
+- To create database schema for Azure, follow the above steps for GCP
+- Some key differences: the AZURE URL has this format: <code>mysql+pymysql://[azure-server-username]:[password]@[server-name]/[db-name]</code>
+- To make sure the tables have been successfully created, connect to MySQL server using <code>mysql -u [username] -h[server-name] -p [password]</code>
+- Refer to steps above 
 
-+ Follow the same steps as for GCP
-+ However, the AZURE URL should be in this format: <code>mysql+pymysql://[azure-server-username]:[password]@[server-name]/[db-name]</code>
-+ See [azureDB.py](ADDLINKpy) for the step by step process
-
-**To check if the tables have been successfully created:**
-
-+ Connect to MySQL server with <code>mysql -u [username] -h[server-name] -p [password]</code>
-+ Same steps as with GCP
-
-**To Populate Tables With Sample Fake Data:**
-
-+ Same steps as for GCP but with the AZURE URL format
+**Populate Tables With Sample Fake Data:**
+- Follow the same steps as above for GCP but be sure that you are using the AZURE URL format
 
 ## Using MySQL Workbench to Generate ERD
 
-**To Create Connection:**
-
-+ In Workbench, create a new connection
-+ Create a connection name
-+ Hostname:
-    + GCP: [public-ip-address]
-    + AZURE: [server-name]
-+ Username:
-    + GCP: leave as root
-    + AZURE: [server-username]
-+ Password: store in vault... and enter respective passwords
-+ Select "Test Connection" to see if everything has been entered correctly
-+ If successful, click "OK"
+- To create a connection, open the MySQL Workbench and create a new connection
+- Type in a connection name
+- Hostname:
+- GCP: [public-ip-address]
+- AZURE: [server-name]
+- Username:
+- GCP: leave as root
+- AZURE: [server-username]
+- Password: click store in vault and enter the passwords you created in the above steps 
+- Click on "Test Connection" to make sure connection is successful
+- If the connection is successful, click "OK"
   
 **To Generate ERD:**
 

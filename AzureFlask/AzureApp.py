@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, text
 
 load_dotenv()  
 
-AZUREURL = os.getenv("AZURE")
+AZUREURL = os.getenv("AZUREURL")
 
 engine = create_engine(AZUREURL,
     connect_args={'ssl': {'ssl-mode':'preferred'}},
@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainpage():
-    return render_template('azurebase.html')
+    return render_template('gcpbase.html')
 
 @app.route('/patients')
 def patients():
@@ -31,22 +31,22 @@ def patients():
         # Fetch all rows of data
         patientdata = result1.fetchall()
 
-    return render_template('azurepatients.html', data1=patientdata)
+    return render_template('gcppatients.html', data1=patientdata)
 
 
-@app.route('/preferences')
-def patientpreferences():
+@app.route('/laboratoryorder')
+def laboratory_order():
     # Establish a database connection
     with engine.connect() as connection:
         # Execute an SQL query to fetch data (replace this with your query)
-        query2 = text('SELECT * FROM patient_preferences')
+        query2 = text('SELECT * FROM laboratory_order')
 
         result2 = connection.execute(query2)
 
         # Fetch all rows of data
-        preferencedata = result2.fetchall()
+        labdata = result2.fetchall()
 
-    return render_template('azurepreferences.html', data2=preferencedata)
+    return render_template('gcplabs.html', data2=labdata)
 
 if __name__ == '__main__':
     app.run(debug=True)

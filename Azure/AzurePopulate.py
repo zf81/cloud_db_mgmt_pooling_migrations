@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from faker import Faker
-from gcpDatabase import Patient, LaboratoryOrder
+from azureDB import Patient, LaboratoryOrder
 import random
 
 # Load environment variables
@@ -11,6 +11,9 @@ load_dotenv()
 
 # Database connection settings from environment variables
 AZUREURL = os.getenv("AZUREURL")
+
+AZUREURL = "mysql+pymysql://fzfall:Azurefall2023!@fzpooling.mysql.database.azure.com/fizzah"
+
 
 
 # Create a database engine

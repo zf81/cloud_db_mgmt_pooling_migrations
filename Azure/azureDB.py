@@ -17,6 +17,15 @@ load_dotenv()
 
 AZUREURL = os.getenv("AZUREURL")
 
+AZUREURL = "mysql+pymysql://fzfall:Azurefall2023!@fzpooling.mysql.database.azure.com/fizzah"
+
+DB_HOST = os.getenv("DB_HOST")
+DB_DATABASE = os.getenv("DB_DATABASE")
+DB_USERNAME = os.getenv("DB_USERNAME")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_PORT = int(os.getenv("DB_PORT", 3306))
+DB_CHARSET = os.getenv("DB_CHARSET", "utf8mb4")
+
 Base = declarative_base()
 
 class Patient(Base):
@@ -39,15 +48,18 @@ class LaboratoryOrder(Base):
     lab_date = Column(Date, nullable=False)
     lab_result = Column(String(100), nullable=False)
     patient = relationship('Patient', back_populates='laboratory')
-    
+
 
 ### Part 2 - initial sqlalchemy-engine to connect to db:
 
 
+connect_args={'ssl':{'fake_flag_to_enable_tls': True}}
+connection_string = (f'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_DATABASE}'
+                    f"?charset={DB_CHARSET}")
+
 engine = create_engine(AZUREURL,
     connect_args={'ssl': {'ssl-mode':'preferred'}},
-)    
-
+)   
 
 ## Test connection
 

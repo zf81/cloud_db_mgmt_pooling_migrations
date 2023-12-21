@@ -37,6 +37,8 @@ class Patient(Base):
     date_of_birth = Column(Date, nullable=False)
     contact_number = Column(String(50), nullable=False)
     happiness_score = Column(Integer)
+    sadness_score = Column(Integer)
+    favorite_tv_show = Column(String(50), nullable=False)
     laboratory = relationship('LaboratoryOrder', back_populates='patient')
 
 class LaboratoryOrder(Base):

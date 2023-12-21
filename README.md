@@ -135,27 +135,25 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
   ![gcplabs](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP_Flask_Screenshots/gcplabs.png)
   
 
-### Azure: 
-
-+ Create a new folder for the AZURE Flask app and in it, create an app.py file, .env file, and a .gitignore file
-    + Load the same GCP URL credentials from before into the .env file and put the .env file into .gitignore
-+ In the app.py file, load in the env credentials and create an engine to connect to the AZURE database
-+ Create an app with Flask with an appropriate amount of routes matching the number of tables in the database
-+ See [AzureApp.py](AzureApp.py) for an example 
-+ In the folder, create a "templates" folder to stylize the Flask app
-    + [azurebase.html](zurebase.html) stylizes the homepage of the flask app
-    + [azurepatients.html](urepatients.html) stylizes the patients table page of the flask app
-    + [azurepreferences.html](preferences.html) stylizes the patients' preferences page of the flask app
-+ Following the templates created, the finalized Flask app looks like this:
+### Azure Flask: 
+- Create a new folder for the Azure Flask app. Within this folder, create an app.py file, .env file, and a .gitignore file
+- Load the same AZURE URL credentials from the previous steps into the .env file and place the .env file into .gitignore
+- In the AzureApp.py file, load in the env credentials and create an engine to connect to the Azure database
+- Create an app with Flask. It should contain the same amount of routes that link to the tables in the database
+- Within the Azure Flask folder, create a <code>templates</code> folder 
+- Homepage styling for the Flask app: [azurebase.html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurebase.html) 
+- Patients page styling: [azurepatients.html]((https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurepatients.html)) 
+- Laboratory Orders page styling: [azurelabs.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurelabs.html)
+- Here are the resulting pages for the Azure Flask app:
   
   Home page
-  ![AZURE Homepage](hFlask/azurehome.png)
+  ![azurehomepage](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/Azure_Flask_Screenshots/azurehome.png)
   
   Patients Page
-  ![AZURE Patientpage](zurepatients.png)
+  ![azurepatients](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/Azure_Flask_Screenshots/azurepatients.png)
 
-  Preferences Page
-  ![AZURE Preferencespage](azurepreferences.png)
+  Laboratory Orders Page
+  ![azurelabs](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/Azure_Flask_Screenshots/azurelabs.png)
 
 ## Database Migrations with Alembic
 

@@ -159,32 +159,29 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 
 ### GCP: 
 
-+ In the terminal run <code>alembic init migrations</code> and this will generate a folder labled "migrations" and a file named "alembic.ini"
-+ In "alemic.ini", scroll down to find <code>sqlalchemy.url =</code> and edit the URL to <code>mysql+pymysql://root:[password]@[public-ip-of-instance]/[db-name]</code> for GCP
-+ Add "alembic.ini" to .gitignore to protect private information 
-+ In the "migrations" folder, there is a file named "env.py"
-+ Around line 19 in "env.py", edit to <code>from [db.py-file-name] import Base</code>
-+ Edit in <code>target_metadata = Base.metadata</code> and comment out <code>target_metadata = None</code>
-+ Go back to terminal and run: <code>alembic revision --autogenerate -m "create tables"</code> to create a migration
-+ Run <code>alembic upgrade head</code> to run the migration
-+ Run <code>alembic upgrade head --sql > migration.sql</code> to create and save the migration into a "migration.sql" file
-+ Go to the database file (in this case, it's gcpDB.py) and make any changes to any of the tables
-    + Changes can include creating or deleting tables and columns
-+ After making a change, go back into the termimal and rerun code starting from: <code>alembic revision --autogenerate -m "create tables"</code>
-+ Run <code>alembic upgrade head</code> to run the migration
-+ Run <code>alembic upgrade head --sql > migration.sql</code> to save the changes and migrations into "migration.sql" file
-+ If the changes are successful, it will be recorded in "migration.sql"
-+ Another way to see if changes are successful, renter the MySQL monitor with <code>mysql -u root -h[ip-address] -p [password]</code>
-+ To select database to use: <code>use [database-name];</code>
-+ To see a list of tables in the database: <code>show tables;</code>
-+ To see a list of column names in a specific table: <code>describe [table-name];</code>
-+ To exit from MySQL monitor: <code>exit</code>
+- Back in the terminal in Google Shell Editor, enter <code>alembic init migrations</code>
+- This will generate a folder in the workspace titled "migrations" as well as a file titled "alembic.ini"
+- Go in the "alembic.ini" file, scroll down to find <code>sqlalchemy.url =</code> and edit the URL to <code>mysql+pymysql://root:[password]@[public-ip-of-instance]/[db-name]</code> for GCP
+- Add "alembic.ini" to .gitignore to hide your credentials 
+- Within the "migrations" folder, open the file titled "env.py"
+- In line 19 in "env.py" file, edit the line to <code>from [db.py-file-name] import Base</code>
+- Edit in <code>target_metadata = Base.metadata</code> and comment out <code>target_metadata = None</code>
+- Return to the terminal and run: <code>alembic revision --autogenerate -m "create tables"</code> to create a migration
+- Enter <code>alembic upgrade head</code> to run the migration
+- Enter <code>alembic upgrade head --sql > migration.sql</code> to create and save the migration into a "migration.sql" file
+- Go to the database file (gcpDatabae.py) and make any change you would like to the database tables. This can be either creating or deleting tables and columns
+- After making the change, go back into the termimal and rerun <code>alembic revision --autogenerate -m "create tables"</code>
+- Run <code>alembic upgrade head</code> to run the migration
+- Run <code>alembic upgrade head --sql > migration.sql</code> to save the changes and migrations into "migration.sql" file
+- If the changes are successful, you should see the changes recorded in "migration.sql"
+- You can also execute MySQL in the terminal with <code>mysql -u root -h[ip-address] -p [password]</code> to see if the changes were made to the tables 
+- Again, <code>use [database-name];</code> will select the database
+- <code>show tables;</code> displays list of tables 
 
 ### Azure: 
-
-+ Steps are the same as for GCP except in "alemic.ini", the URL should be edited to <code>mysql+pymysql://[server-username]:[password]@[server-name]/[db-name]</code> for AZURE
-+ Also for entering the MySQL monitor, use: <code>mysql -u [username] -h[server-name] -p [password]</code>
+- The steps for database migrations with alembic within Azure are the same as for GCP with some key differences.
+- Within "alembic.ini", the URL should be changed to <code>mysql+pymysql://[server-username]:[password]@[server-name]/[db-name]</code> for AZURE
+- When executing MySQL in the terminal, you will need to use <code>mysql -u [username] -h[server-name] -p [password]</code>
 
 ## Documentations and Errors
-
-**Errors**
+- There were no major errors encountered for this assignment. However, I did make some major mistakes in the beginning which did not allow me to run my app.py files or see the alembic.ini files. This was because I was working in the wrong workspace. Whenever I executed alembic init migrations, the alembic.ini file would be created but it was in another workspace and I could not see it in my workspace. I tried to use rm -r alembic.ini to remove the file and rerun the code. After realizing I needed to cd into the proper folders, I was able to run everything smoothly. 

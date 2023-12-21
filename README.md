@@ -96,19 +96,20 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 - Click on "Test Connection" to make sure connection is successful
 - If the connection is successful, click "OK"
   
-**To Generate ERD:**
-
-+ In top menu bar, select "Database"
-+ Select "Reverse Engineer..."
-+ Stored connection: name of current connection
-+ Go "Next"
-+ Select Schema
-+ Go "Next"
-+ Execute and finish
-+ Scroll down to tables and double click on the dotted line connecting the tables
-+ In Relationships tab, go to "Foreign Key"
-+ Under Cardinality, select "One-to-One"
-+ Save a picutre of the completed ERD: [GCP ERD](hIMAGEpng), [AZURE ERD](IMAGE)
+**Generate ERD:**
+- Enter the connection you created
+- In top menu bar, click on "Database"
+- THen click "Reverse Engineer"
+- For stored connection, select name of current connection
+- Click "Next"
+- Click on Schema
+- Click "Next"
+- Select Execute and finish
+- You should now see the ERD diagrams
+- Scroll to the tables and double click on the dotted line connecting the tables
+- At the bottom you will see Relationships tab. Click on "Foreign Key"
+- Under Cardinality, select "One-to-One"
+- Save pictures of the ERD (Azure ERD and GCP ERD)
 
 ## SQLAlchemy and Flask Integration
 

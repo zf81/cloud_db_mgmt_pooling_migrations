@@ -141,9 +141,9 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 - In the AzureApp.py file, load in the env credentials and create an engine to connect to the Azure database
 - Create an app with Flask. It should contain the same amount of routes that link to the tables in the database
 - Within the Azure Flask folder, create a <code>templates</code> folder 
-- Homepage styling for the Flask app: [azurebase.html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurebase.html) 
-- Patients page styling: [azurepatients.html]((https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurepatients.html)) 
-- Laboratory Orders page styling: [azurelabs.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurelabs.html)
+- Homepage styling for the Flask app: [azurebase.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurebase.html))
+- Patients page styling: [azurepatients.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurepatients.html)) 
+- Laboratory Orders page styling: [azurelabs.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/AzureFlask/templates/azurelabs.html))
 - Here are the resulting pages for the Azure Flask app:
   
   Home page

@@ -41,29 +41,28 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 
 ### GCP:
 
-**Create Database Schema:**
+**Database Schema:**
 
-+ In Shell environment, first make sure all the necessary packages are installed with <code>pip install sqlalchemy alembic mysql-connector-python pymysql</code>
-+ Create a .py file that indicates it is for database creation: [gcpDB.py](ADDLINKgcpDB.py)
-+ Create a .env file to hold login credentials to access the cloud mySQL instance
-+ Create a .gitignore file to hide the .env file once the files are pushed to Github
-+ Import necessary packages into gcpDB.py file
-+ Load in credentials from .env file and create a base
-+ create tables with SQLAlchemy
-+ Create an engine to connect to the cloud database
-    + The GCP URL should be in this format: <code>mysql+pymysql://root:[password]@[public-ip-of-instance]/[db-name]</code>
-+ See [gcpDB.py](ADDLINKgcpDB.py) for a step by step process of the above
+- Go the the Google Shell environment and open the terminal
+- Install all necessary packages using: <code>pip install sqlalchemy alembic mysql-connector-python pymysql</code>
+- Note: I also had to <code>pip install Faker</code> and <code>pip install python-dotenv</code>
+- Create a gcpDatabase.py file that will be used for database creation: [gcpDatabase.py](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP/gcpDatabase.py)
+- Create a .env file which will contain the login credentials for the cloud mySQL instance
+- Create a .gitignore file to hide the .env file after files are pushed to Github
+- Import necessary packages into gcpDatabase.py file
+- Load in credentials from .env file
+- Create a base
+- Create tables with SQLAlchemy. I created a patients table and laboratory orders table 
+- Create an engine to connect to the cloud database
+- The GCP URL to connect will have this format: <code>mysql+pymysql://root:[password]@[public-ip-of-instance]/[db-name]</code>
   
-**To check if the tables have been successfully created:**
+- To check if the tables have been successfully created, connect to MySQL server using <code>mysql -u root -h[ip-address] -p [password]</code>
+- To select the database you created, type: <code>use [database-name];</code>
+- <code>show tables;</code> displays a list of tables within the database
+- Once you are done checking tables, exit the MySQL monitor using <code>exit</code> 
 
-+ Connect to MySQL server with <code>mysql -u root -h[ip-address] -p [password]</code>
-+ To select database to use: <code>use [database-name];</code>
-+ To see a list of tables in the database: <code>show tables;</code> 
-+ To exit from MySQL monitor: <code>exit</code> 
-
-**To Populate Tables With Sample Fake Data:**
-
-+ Create another .py file that indicates it is for populating the tables: [gcpPopulate.py](ADDLINK.py)
+## Populate Tables With Sample Fake Data:
+- Create another .py file (gcpPopulate.py) which will be used for populating the tables: [gcpPopulate.py](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP/gcpPopulate.py)
 + Import necessary packages into gcpPopulate.py file
 + Load in credentials from .env file and create a database engine
 + Create a session to interact with the database

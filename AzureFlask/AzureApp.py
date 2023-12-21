@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainpage():
-    return render_template('gcpbase.html')
+    return render_template('azurebase.html')
 
 @app.route('/patients')
 def patients():
@@ -31,7 +31,7 @@ def patients():
         # Fetch all rows of data
         patientdata = result1.fetchall()
 
-    return render_template('gcppatients.html', data1=patientdata)
+    return render_template('azurepatients.html', data1=patientdata)
 
 
 @app.route('/laboratoryorder')
@@ -46,7 +46,7 @@ def laboratory_order():
         # Fetch all rows of data
         labdata = result2.fetchall()
 
-    return render_template('gcplabs.html', data2=labdata)
+    return render_template('azurelabs.html', data2=labdata)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -113,27 +113,26 @@ Gain practical experience in managing a cloud-based MySQL database with a focus 
 
 ## SQLAlchemy and Flask Integration
 
-### GCP:
+### GCP Flask:
 
-+ Create a new folder for the GCP Flask app and in it, create an app.py file, .env file, and a .gitignore file
-    + Load the same GCP URL credentials from before into the .env file and put the .env file into .gitignore
-+ In the app.py file, load in the env credentials and create an engine to connect to the GCP database
-+ Create an app with Flask with an appropriate amount of routes matching the number of tables in the database
-+ See [gcpApp.py](GCPApp.py) for an example 
-+ In the folder, create a "templates" folder to stylize the Flask app
-    + [gcpbase.html](gcpbase.html) stylizes the homepage of the flask app
-    + [gcppatients.html](html) stylizes the patients table page of the flask app
-    + [gcppreferences.html](cppreferences.html) stylizes the patients' preferences page of the flask app
-+ Following the templates created, the finalized Flask app looks like this:
+- Create a new folder for GCP Flask app. Within this folder, create an app.py file, .env file, and a .gitignore file
+- Load the same GCP URL credentials into the .env file and place the .env file into .gitignore
+- In the app.py file, load in the env credentials and create an engine which will connect to the GCP database
+- In this gcpapp.py, create an app with Flask which will contain the tables from the database: [gcpApp.py](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCPFlask/gcpapp.py)
+- Within the GCP Flask folder, create a <code>templates</code> folder to stylize the Flask app
+- Homepage styling for the Flask app: [gcpbase.html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCPFlask/templates/gcpbase.html) 
+- Patients page styling: [gcppatients.html]([html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCPFlask/templates/gcppatients.html)) 
+- Laboratory Orders page styling: [gcplabs.html](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCPFlask/templates/gcplabs.html) 
+- Here are the resulting pages for the GCP Flask app:
   
   Home page
-  ![GCP Homepage](gcpbase.png)
+  ![gcphomepage](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP_Flask_Screenshots/gcphomepage.png)
   
   Patients Page
-  ![GCP Patientpage](png)
+  ![gcppatients](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP_Flask_Screenshots/gcppatients.png)
 
   Laboratory Order Page
-  ![GCP Preferencespage](.png)
+  ![gcplabs](https://github.com/zf81/cloud_db_mgmt_pooling_migrations/blob/main/GCP_Flask_Screenshots/gcplabs.png)
   
 
 ### Azure: 

@@ -12,8 +12,6 @@ load_dotenv()
 # Database connection settings from environment variables
 AZUREURL = os.getenv("AZUREURL")
 
-AZUREURL = "mysql+pymysql://fzfall:Azurefall2023!@fzpooling.mysql.database.azure.com/fizzah"
-
 
 
 # Create a database engine
